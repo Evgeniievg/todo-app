@@ -22,7 +22,6 @@ form.addEventListener('submit', (e) => {
   }
 });
 
-
 function addTaskToList(task) {
   const task_el = document.createElement('div');
   task_el.classList.add('task');
@@ -64,12 +63,20 @@ function addTaskToList(task) {
       task_edit_el.innerText = "Edit";
       task_input_el.setAttribute("readonly", "readonly");
       saveTasksToLocalStorage();
-    }
-  });
+      }
+      });
 
-  task_delete_el.addEventListener('click', (e) => {
-    list_el.removeChild(task_el);
-  });
+      task_delete_el.addEventListener('click', (e) => {
+      task_el.remove();
+      saveTasksToLocalStorage();
+      });
+      }
 
-}
+      function saveTasksToLocalStorage() {
+      const tasks = [];
+      list_el.querySelectorAll('.task .text').forEach(task => {
+      tasks.push(task.value);
+      });
 
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+      }
