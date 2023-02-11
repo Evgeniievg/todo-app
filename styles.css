@@ -95,3 +95,32 @@ button{
   font-size: 24px;
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  .wrapper{
+    width: 100%;
+  }
+  .task_form{
+    flex-direction: column;
+  }
+  .task_submit{
+    align-self: flex-start;
+  }
+  .task_input{
+    width: 90%;
+  }
+  .tasks{
+    gap: 0px;
+  }
+  button{
+    margin-bottom: 40px;
+  }
+  .task{
+    flex-direction: column;
+    gap: 10px;
+  }
+  .text{
+    margin-bottom: 0;
+    width: 90%;
+  }
+}
