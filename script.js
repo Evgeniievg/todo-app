@@ -22,12 +22,6 @@ form.addEventListener('submit', (e) => {
   }
 });
 
-function saveTasksToLocalStorage() {
-  const tasks = Array.from(list_el.children).map(task => {
-    return task.querySelector(".text").value;
-  });
-  localStorage.setItem("tasks", JSON.stringify(tasks));
-}
 
 function addTaskToList(task) {
   const task_el = document.createElement('div');
